@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
@@ -33,7 +33,7 @@
             document.getElementById("main").src = window.location.hash.substr(1);
             document.getElementById("v").load();
         });
-        document.getElementById("main").addEventListener("onchange",function(){
+        document.getElementById("rate").addEventListener("onchange",function(){
             document.getElementById("v").playbackRate=Number(document.getElementById("rate").value);
         });
     </script>
