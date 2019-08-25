@@ -16,7 +16,6 @@
             position: fixed;
             left: 0px;
             top: 0px;
-            display: none;
         }
     </style>
 </head>
@@ -26,7 +25,7 @@
             <source id="main" src="" />
         </video>
     </div>
-    <input id="rate" type="text" name="rate" value="1.0" onchange="cr()">
+    <input id="rate" type="text" name="rate" value="1.0" onchange="cr()" cols="5" rows="1">
     <script>
         document.getElementById("main").src = window.location.hash.substr(1);
         window.addEventListener("hashchange", function () {
