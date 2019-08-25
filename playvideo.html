@@ -1,18 +1,40 @@
 ﻿<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        #d1{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            max-height: 100%;
+            max-width: 100%;
+            margin: auto;
+        }
+        #rate{
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <input id="rate" type="text" name="rate" value="1.0">
     <div id="d1" style="position:fixed;top:0%;right:0%;left:0%;bottom:0%;background:#000000">
-        <video id="v" controls="controls"  autoplay="autoplay" style="width: 100%;height: 100%;object-fit: scale-down;">
+        <video id="v" controls="controls"  autoplay="autoplay">
             <source id="main" src="" />
         </video>
     </div>
     <script>
         document.getElementById("main").src = window.location.hash.substr(1);
-        window.addEventListener('hashchange', function () {
+        window.addEventListener("hashchange", function () {
             document.getElementById("main").src = window.location.hash.substr(1);
             document.getElementById("v").load();
+        });
+        document.getElementById("main").addEventListener("onchange",function(){
+            document.getElementById("v").playbackRate=Number(document.getElementById("rate").value);
         });
     </script>
     <script src="/data/order.js"></script>
